@@ -1,0 +1,17 @@
+<table class="table table-primary">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Count</th>
+      <th scope="col">Operations</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let eachDept of allDeptsList">
+      <td scope="row">{{eachDept.deptId}}</td>
+      <td>{{eachDept.deptName}}</td>
+      <td>{{eachDept.deptCap}}</td>
+    </tr>
+  </tbody>
+</table>

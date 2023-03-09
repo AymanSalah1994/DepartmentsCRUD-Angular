@@ -5,5 +5,21 @@
 3- Creating the Model
   - $ ng generate class _models/department --skip-tests
 
+4-Instead Of Making a Big "Parent" Component that Take/Get Data From Children ,
+We Will Make a Service that acts as the Container Of Data
+  - This Container is a Class With CRUD functions
+  - Using Depencey Injection
+
+5- ( $ ng g s _services/departmentService) >>
+  ( $ ng g s _services/department ) >> BETTER
+  DON'T INCLUDE service Word in the Command , It will Generated Automatically
+  - Command To Create the Service .
+
+
+6-Now Each Components will Use the Data From the Service , It will Take the data
+Inside its TypeScript File Using DIC "Depencey Injection" Inside the CTOR of the Component
+
+
+
 
 
