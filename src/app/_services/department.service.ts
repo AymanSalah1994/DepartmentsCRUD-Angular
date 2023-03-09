@@ -42,7 +42,12 @@ export class DepartmentService {
     this.updateFlagStatus = !this.updateFlagStatus ;
     this.prepareForUpdate(id) ;
   }
-  
+
+  justToggle()
+  {
+    this.updateFlagStatus = !this.updateFlagStatus ;
+  }
+
   getFlagStatus()
   {
     return this.updateFlagStatus ;

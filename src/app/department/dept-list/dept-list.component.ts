@@ -22,17 +22,19 @@ export class DeptListComponent implements OnInit {
 
   ngOnChanges()
   {
-    this.allDeptsList = this.dService.getAllDepts() ;
+    //this.allDeptsList = this.dService.getAllDepts() ;
+    //this.updateDetailFlag = this.dService.getFlagStatus()  ;
   }
 
   sendToDelete(id:number)
   {
     this.dService.deleteDepartment(id) ;
-    // this.allDeptsList = this.dService.getAllDepts() ;
-    this.ngOnChanges() ; // To Update list After Delete
+    this.allDeptsList = this.dService.getAllDepts() ;
+    // I need to Update the List , Because in Delete i create another ARR
+    //this.ngOnChanges() ; // To Update list After Delete
   }
 
-  toggleUpdateFlag(id:number)
+  _toggleUpdateFlag(id:number)
   {
     this.dService.toggleUpdateFlag(id) ;
     this.updateDetailFlag = this.dService.getFlagStatus()  ;

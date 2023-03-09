@@ -12,7 +12,7 @@ export class UpdateDepartmentComponent {
   {
 
   }
-  
+
   updateSingleDepartment = this.dService.getDepartmentToUpdate() ;
   ngOnChanges()
   {
@@ -21,6 +21,6 @@ export class UpdateDepartmentComponent {
 
   save(id:number)
   {
-    this.dService.toggleUpdateFlag(id)
+    this.dService.toggleUpdateFlag(id) ;
   }
 }

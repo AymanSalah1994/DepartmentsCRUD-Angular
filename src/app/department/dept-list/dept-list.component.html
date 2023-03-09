@@ -14,7 +14,7 @@
       <td>{{eachDept.deptCap}}</td>
       <td>
         <button>Details</button>
-        <button (click)="toggleUpdateFlag(eachDept.deptId)">Update</button>
+        <button (click)="_toggleUpdateFlag(eachDept.deptId)">Update</button>
         <button (click)="sendToDelete(eachDept.deptId)">Delete</button>
       </td>
     </tr>
