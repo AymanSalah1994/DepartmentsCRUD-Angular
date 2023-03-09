@@ -14,12 +14,13 @@
       <td>{{eachDept.deptCap}}</td>
       <td>
         <button>Details</button>
-        <button (click)="_toggleUpdateFlag(eachDept.deptId)">Update</button>
+        <button (click)="XtoggleUpdateFlag(eachDept.deptId)">Update</button>
         <button (click)="sendToDelete(eachDept.deptId)">Delete</button>
       </td>
     </tr>
   </tbody>
 </table>
-<div *ngIf="updateDetailFlag">
+<div *ngIf="dService.updateFlagStatus">
+  <!-- NOTE: the BUG -->
   <app-update-department></app-update-department>
 </div>

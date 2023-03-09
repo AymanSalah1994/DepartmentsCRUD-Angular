@@ -8,11 +8,12 @@ import { DepartmentService } from 'src/app/_services/department.service';
   styleUrls: ['./dept-list.component.css']
 })
 export class DeptListComponent implements OnInit {
-  updateDetailFlag = false ;
+  updateDetailFlag = this.dService.getFlagStatus() ;
   allDeptsList:Department[] = [];
   constructor(public dService:DepartmentService)
   {
-
+    //
+    //
   }
 
   ngOnInit()
@@ -23,7 +24,8 @@ export class DeptListComponent implements OnInit {
   ngOnChanges()
   {
     //this.allDeptsList = this.dService.getAllDepts() ;
-    //this.updateDetailFlag = this.dService.getFlagStatus()  ;
+    this.dService.justToggle() ;
+    this.updateDetailFlag = this.dService.getFlagStatus() ;
   }
 
   sendToDelete(id:number)
@@ -34,7 +36,7 @@ export class DeptListComponent implements OnInit {
     //this.ngOnChanges() ; // To Update list After Delete
   }
 
-  _toggleUpdateFlag(id:number)
+  XtoggleUpdateFlag(id:number)
   {
     this.dService.toggleUpdateFlag(id) ;
     this.updateDetailFlag = this.dService.getFlagStatus()  ;

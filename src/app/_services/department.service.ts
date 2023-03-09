@@ -39,13 +39,14 @@ export class DepartmentService {
 
   toggleUpdateFlag(id:number)
   {
-    this.updateFlagStatus = !this.updateFlagStatus ;
+    // this.updateFlagStatus = !this.updateFlagStatus ;
+    this.justToggle();
     this.prepareForUpdate(id) ;
   }
 
   justToggle()
   {
-    this.updateFlagStatus = !this.updateFlagStatus ;
+    this.updateFlagStatus = !this.updateFlagStatus;
   }
 
   getFlagStatus()

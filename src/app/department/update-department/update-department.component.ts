@@ -7,10 +7,10 @@ import { DepartmentService } from 'src/app/_services/department.service';
   styleUrls: ['./update-department.component.css']
 })
 export class UpdateDepartmentComponent {
-
+  smallUpdateflag=this.dService.getFlagStatus() ;
   constructor(public dService:DepartmentService)
   {
-    
+
   }
 
   updateSingleDepartment = this.dService.getDepartmentToUpdate() ;
@@ -21,6 +21,8 @@ export class UpdateDepartmentComponent {
 
   save(id:number)
   {
-    this.dService.toggleUpdateFlag(id) ;
+    // this.dService.toggleUpdateFlag(id) ;
+    console.log(!this.dService.updateFlagStatus) ;
+    this.dService.justToggle() ;
   }
 }
