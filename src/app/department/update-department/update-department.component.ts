@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Department } from 'src/app/_models/department';
 import { DepartmentService } from 'src/app/_services/department.service';
 
 @Component({
@@ -12,8 +13,9 @@ export class UpdateDepartmentComponent {
   {
 
   }
+  public originalDept:Department =this.dService.getDepartmentToUpdate() ;
 
-  updateSingleDepartment = this.dService.getDepartmentToUpdate() ;
+  updateSingleDepartment =  new Department(this.originalDept.deptId,this.originalDept.deptName,this.originalDept.deptCap);
   ngOnChanges()
   {
 
@@ -22,7 +24,12 @@ export class UpdateDepartmentComponent {
   save(id:number)
   {
     // this.dService.toggleUpdateFlag(id) ;
-    console.log(!this.dService.updateFlagStatus) ;
+
+    this.dService.justToggle() ;
+  }
+
+  clear()
+  {
     this.dService.justToggle() ;
   }
 }

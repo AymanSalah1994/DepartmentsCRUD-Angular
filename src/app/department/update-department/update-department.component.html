@@ -1,6 +1,7 @@
 <div>
-  <input  [(ngModel)]="updateSingleDepartment.deptId">
+  <input  [(ngModel)]="updateSingleDepartment.deptId" disabled>
   <input  [(ngModel)]="updateSingleDepartment.deptName">
   <input  [(ngModel)]="updateSingleDepartment.deptCap">
   <button (click)="save(updateSingleDepartment.deptId)">Save Data</button>
+  <button (click)="clear()">Clear Data</button>
 </div>
