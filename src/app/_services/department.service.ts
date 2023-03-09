@@ -6,6 +6,8 @@ import { Department } from '../_models/department';
 })
 export class DepartmentService {
 
+  public updateFlagStatus =  false  ;
+  departmentToUpdate = new Department(0,"",0) ;
   private departments:Department[] = [
     new Department(1,"OS" , 35) ,
     new Department(2,"PD" , 100),
@@ -33,6 +35,32 @@ export class DepartmentService {
     this.departments = this.departments.filter(function name(eachItem) {
       return eachItem != toDeleteDept ;
     }) ;
+  }
+
+  toggleUpdateFlag(id:number)
+  {
+    this.updateFlagStatus = !this.updateFlagStatus ;
+    this.prepareForUpdate(id) ;
+  }
+  
+  getFlagStatus()
+  {
+    return this.updateFlagStatus ;
+  }
+
+  prepareForUpdate(id:number)
+  {
+    for (let index = 0; index < this.departments.length; index++) {
+      if (id == this.departments[index].deptId)
+      {
+        this.departmentToUpdate = this.departments[index] ;
+      }
+    } // End of For
+  }
+
+  getDepartmentToUpdate()
+  {
+    return this.departmentToUpdate  ;
   }
 
 

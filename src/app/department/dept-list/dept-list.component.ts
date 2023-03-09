@@ -8,7 +8,7 @@ import { DepartmentService } from 'src/app/_services/department.service';
   styleUrls: ['./dept-list.component.css']
 })
 export class DeptListComponent implements OnInit {
-
+  updateDetailFlag = false ;
   allDeptsList:Department[] = [];
   constructor(public dService:DepartmentService)
   {
@@ -29,7 +29,13 @@ export class DeptListComponent implements OnInit {
   {
     this.dService.deleteDepartment(id) ;
     // this.allDeptsList = this.dService.getAllDepts() ;
-    this.ngOnChanges() ;
+    this.ngOnChanges() ; // To Update list After Delete
+  }
+
+  toggleUpdateFlag(id:number)
+  {
+    this.dService.toggleUpdateFlag(id) ;
+    this.updateDetailFlag = this.dService.getFlagStatus()  ;
   }
 
 }
