@@ -5,13 +5,15 @@ import { AppComponent } from './app.component';
 import { DeptListComponent } from './department/dept-list/dept-list.component';
 import { AddDepartmentComponent } from './department/add-department/add-department.component';
 import { UpdateDepartmentComponent } from './department/update-department/update-department.component';
+import { DetailDepartmentComponent } from './department/detail-department/detail-department.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DeptListComponent,
     AddDepartmentComponent,
-    UpdateDepartmentComponent
+    UpdateDepartmentComponent,
+    DetailDepartmentComponent
   ],
   imports: [
     BrowserModule ,
