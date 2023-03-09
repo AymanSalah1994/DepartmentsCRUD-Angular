@@ -8,11 +8,10 @@ import { DepartmentService } from 'src/app/_services/department.service';
   styleUrls: ['./update-department.component.css']
 })
 export class UpdateDepartmentComponent {
-  smallUpdateflag=this.dService.getFlagStatus() ;
   constructor(public dService:DepartmentService)
   {
   }
-  
+
   public originalDept:Department =this.dService.getDepartmentToUpdate() ;
 
   updateSingleDepartment =  new Department(this.originalDept.deptId,this.originalDept.deptName,this.originalDept.deptCap);
