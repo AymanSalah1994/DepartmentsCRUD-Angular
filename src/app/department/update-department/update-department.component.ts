@@ -22,7 +22,7 @@ export class UpdateDepartmentComponent {
 
   }
 
-  save(id:number)
+  save()
   {
     this.originalDept.deptName = this.updateSingleDepartment.deptName ;
     this.originalDept.deptCap = this.updateSingleDepartment.deptCap ;
