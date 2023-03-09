@@ -10,7 +10,7 @@ export class UpdateDepartmentComponent {
 
   constructor(public dService:DepartmentService)
   {
-
+    
   }
 
   updateSingleDepartment = this.dService.getDepartmentToUpdate() ;
