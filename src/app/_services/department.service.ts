@@ -7,7 +7,10 @@ import { Department } from '../_models/department';
 export class DepartmentService {
 
   public updateFlagStatus =  false  ;
+  public detailFlagStatus  = false  ;
+
   departmentToUpdate = new Department(0,"",0) ;
+  departmentToView = new Department(0,"",0) ;
   private departments:Department[] = [
     new Department(1,"OS" , 35) ,
     new Department(2,"PD" , 100),
@@ -39,9 +42,14 @@ export class DepartmentService {
 
   toggleUpdateFlag(id:number)
   {
-    // this.updateFlagStatus = !this.updateFlagStatus ;
-    this.justToggle();
+    this.justToggle() ;
     this.prepareForUpdate(id) ;
+  }
+
+  toggleViewFlag(id:number)
+  {
+    this.detailFlagStatus = !this.detailFlagStatus ;
+    this.prepareForView(id) ;
   }
 
   justToggle()
@@ -64,11 +72,25 @@ export class DepartmentService {
     } // End of For
   }
 
+  prepareForView(id:number)
+  {
+    for (let index = 0; index < this.departments.length; index++) {
+      if (id == this.departments[index].deptId)
+      {
+        this.departmentToView = this.departments[index] ;
+      }
+    } // End of For
+  }
+
   getDepartmentToUpdate()
   {
     return this.departmentToUpdate  ;
   }
 
+  getDepartmentToView()
+  {
+    return this.departmentToView  ;
+  }
 
   constructor() { }
 }

@@ -13,14 +13,21 @@
       <td>{{eachDept.deptName}}</td>
       <td>{{eachDept.deptCap}}</td>
       <td>
-        <button>Details</button>
+        <button (click)="showDetails(eachDept.deptId)">Details</button>
         <button (click)="XtoggleUpdateFlag(eachDept.deptId)">Update</button>
         <button (click)="sendToDelete(eachDept.deptId)">Delete</button>
       </td>
     </tr>
   </tbody>
 </table>
+
 <div *ngIf="dService.updateFlagStatus">
   <!-- NOTE: the BUG -->
   <app-update-department></app-update-department>
+</div>
+
+
+
+<div *ngIf="dService.detailFlagStatus">
+  <app-detail-department></app-detail-department>
 </div>

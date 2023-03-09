@@ -41,5 +41,10 @@ export class DeptListComponent implements OnInit {
     this.dService.toggleUpdateFlag(id) ;
     this.updateDetailFlag = this.dService.getFlagStatus()  ;
   }
+  showDetails(id:number)
+  {
+    this.dService.toggleViewFlag(id) ;
+
+  }
 
 }
