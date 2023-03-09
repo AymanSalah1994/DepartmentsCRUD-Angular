@@ -3,11 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { DeptListComponent } from './department/dept-list/dept-list.component';
+import { AddDepartmentComponent } from './department/add-department/add-department.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DeptListComponent
+    DeptListComponent,
+    AddDepartmentComponent
   ],
   imports: [
     BrowserModule ,

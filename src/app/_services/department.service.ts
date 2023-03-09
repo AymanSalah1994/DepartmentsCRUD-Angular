@@ -16,5 +16,25 @@ export class DepartmentService {
     return this.departments;
   }
 
+  addNewDepartment(dept:Department)
+  {
+    this.departments.push(dept) ;
+  }
+
+  deleteDepartment(id:number)
+  {
+  let toDeleteDept = new Department(0,"",0) ;
+    for (let index = 0; index < this.departments.length; index++) {
+      if (id == this.departments[index].deptId)
+      {
+        toDeleteDept = this.departments[index] ;
+      }
+    } // End of For
+    this.departments = this.departments.filter(function name(eachItem) {
+      return eachItem != toDeleteDept ;
+    }) ;
+  }
+
+
   constructor() { }
 }

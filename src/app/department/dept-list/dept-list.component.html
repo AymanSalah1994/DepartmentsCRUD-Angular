@@ -12,6 +12,11 @@
       <td scope="row">{{eachDept.deptId}}</td>
       <td>{{eachDept.deptName}}</td>
       <td>{{eachDept.deptCap}}</td>
+      <td>
+        <button>Details</button>
+        <button>Update</button>
+        <button (click)="sendToDelete(eachDept.deptId)">Delete</button>
+      </td>
     </tr>
   </tbody>
 </table>

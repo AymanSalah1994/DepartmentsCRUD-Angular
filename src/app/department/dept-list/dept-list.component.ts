@@ -1,4 +1,4 @@
-import { Component , OnInit } from '@angular/core';
+import { Component , OnInit , OnChanges } from '@angular/core';
 import { Department } from 'src/app/_models/department';
 import { DepartmentService } from 'src/app/_services/department.service';
 
@@ -18,6 +18,18 @@ export class DeptListComponent implements OnInit {
   ngOnInit()
   {
     this.allDeptsList = this.dService.getAllDepts() ;
+  }
+
+  ngOnChanges()
+  {
+    this.allDeptsList = this.dService.getAllDepts() ;
+  }
+
+  sendToDelete(id:number)
+  {
+    this.dService.deleteDepartment(id) ;
+    // this.allDeptsList = this.dService.getAllDepts() ;
+    this.ngOnChanges() ;
   }
 
 }
