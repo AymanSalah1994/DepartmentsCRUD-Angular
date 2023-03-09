@@ -1,0 +1,9 @@
+1-Creating the Project
+
+2- ($ npm install bootstrap )
+
+3- Creating the Model
+  - $ ng generate class _models/department --skip-tests
+
+
+
