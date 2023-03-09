@@ -16,6 +16,7 @@ export class UpdateDepartmentComponent {
   public originalDept:Department =this.dService.getDepartmentToUpdate() ;
 
   updateSingleDepartment =  new Department(this.originalDept.deptId,this.originalDept.deptName,this.originalDept.deptCap);
+
   ngOnChanges()
   {
 
@@ -23,8 +24,9 @@ export class UpdateDepartmentComponent {
 
   save(id:number)
   {
+    this.originalDept.deptName = this.updateSingleDepartment.deptName ;
+    this.originalDept.deptCap = this.updateSingleDepartment.deptCap ;
     // this.dService.toggleUpdateFlag(id) ;
-
     this.dService.justToggle() ;
   }
 
